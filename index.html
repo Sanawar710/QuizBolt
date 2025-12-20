@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizBolt - AI-Powered Learning Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2563eb;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #4b5563;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        .login-btn {
+            background: #2563eb;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .login-btn:hover {
+            background: #1d4ed8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #2563eb;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid #2563eb;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+        /* Features Section */
+        .features {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #1e293b;
+            margin-bottom: 3rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: #dbeafe;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            color: #64748b;
+            margin-bottom: 1rem;
+        }
+
+        .contributor {
+            font-size: 0.875rem;
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        /* Team Section */
+        .team {
+            background: #f8fafc;
+            padding: 4rem 2rem;
+        }
+
+        .team-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .team-member h3 {
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member .role {
+            color: #2563eb;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .team-member .id {
+            color: #64748b;
+            font-size: 0.875rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                ⚡ QuizBolt
+            </div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <button class="login-btn">Login</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to QuizBolt</h1>
+            <p>AI-Powered Learning Platform for Smart Students</p>
+            <p>Transform your study materials into interactive flashcards, comprehensive notes, engaging quizzes, and get instant AI assistance.</p>
+            <div class="cta-buttons">
+                <a href="#features" class="btn-primary">Explore Features</a>
+                <a href="https://github.com/mariumgk/QuizBolt" class="btn-secondary" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <h2 class="section-title">Key Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎴</div>
+                <h3>Flashcard Generation</h3>
+                <p>Automatically generate interactive flashcards from your study materials using AI. Perfect for quick review and memorization.</p>
+                <div class="contributor">Developed by: Fatima Liaquat (2023202)</div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📝</div>
+                <h3>Smart Study Notes</h3>
+                <p>Generate comprehensive, well-organized study notes from your documents. AI helps structure and summarize key concepts.</p>
+                <div class="contributor">Developed by: Muhammad Sanawar (2023331)</div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
+                <h3>AI Chat Assistant</h3>
+                <p>Chat with AI about your study materials. Ask questions, get explanations, and explore concepts interactively.</p>
+                <div class="contributor">Developed by: Rayyan Mehmood (2023602)</div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">❓</div>
+                <h3>Quiz Generation</h3>
+                <p>Create custom quizzes from your notes to test your knowledge. Multiple choice questions generated intelligently by AI.</p>
+                <div class="contributor">Developed by: Marium Imran (2023303)</div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <h3>Course Browser</h3>
+                <p>Browse and organize different courses and subjects. Keep all your study materials in one centralized location.</p>
+                <div class="contributor">Collaborative Feature</div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📄</div>
+                <h3>Document Upload</h3>
+                <p>Upload PDFs, documents, and other study materials. AI extracts and processes content for all features.</p>
+                <div class="contributor">Core Functionality</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team" id="team">
+        <div class="team-content">
+            <h2 class="section-title">Meet Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <h3>Fatima Liaquat</h3>
+                    <div class="role">Flashcard Generation</div>
+                    <div class="id">2023202</div>
+                </div>
+                <div class="team-member">
+                    <h3>Muhammad Sanawar</h3>
+                    <div class="role">Study Notes Generation</div>
+                    <div class="id">2023331</div>
+                </div>
+                <div class="team-member">
+                    <h3>Rayyan Mehmood</h3>
+                    <div class="role">AI Chat Interaction</div>
+                    <div class="id">2023602</div>
+                </div>
+                <div class="team-member">
+                    <h3>Marium Imran</h3>
+                    <div class="role">Quiz Generation</div>
+                    <div class="id">2023303</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="features" id="about">
+        <h2 class="section-title">About QuizBolt</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <p style="font-size: 1.125rem; color: #64748b; margin-bottom: 1rem;">
+                QuizBolt is an innovative AI-powered learning platform designed to revolutionize the way students study and learn. 
+                By leveraging cutting-edge artificial intelligence, we transform traditional study materials into interactive, 
+                engaging learning experiences.
+            </p>
+            <p style="font-size: 1.125rem; color: #64748b;">
+                Our platform combines multiple AI-driven features to create a comprehensive study ecosystem that adapts to 
+                each student's learning style and needs. Whether you're preparing for exams, reviewing course materials, 
+                or exploring new concepts, QuizBolt is your intelligent study companion.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 QuizBolt. All rights reserved.</p>
+        <p>Built with ❤️ by the QuizBolt Team</p>
+        <p><a href="https://github.com/Sanawar710/Sanawar710.github.io" target="_blank">GitHub Repository</a></p>
+    </footer>
+</body>
+</html>
