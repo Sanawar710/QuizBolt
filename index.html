@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +21,7 @@
         /* Header */
         header {
             background: white;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -161,13 +162,13 @@
             background: white;
             padding: 2rem;
             border-radius: 1rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .feature-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
         }
 
         .feature-icon {
@@ -222,7 +223,7 @@
             padding: 2rem;
             border-radius: 1rem;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .team-member h3 {
@@ -246,13 +247,52 @@
             background: white;
             padding: 1rem;
             border-radius: 1rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .video-container video {
             width: 100%;
             border-radius: 0.5rem;
             max-height: 500px;
+        }
+
+        /* Technologies Section */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tech-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .tech-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-card h3 {
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+        }
+
+        .tech-card p {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
         /* Footer */
@@ -284,6 +324,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header>
@@ -293,6 +334,8 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#features">Features</a></li>
+                <li><a href="#demo">Demo</a></li>
+                <li><a href="#technologies">Technologies</a></li>
                 <li><a href="#team">Team</a></li>
                 <li><a href="#about">About</a></li>
             </ul>
@@ -305,10 +348,12 @@
         <div class="hero-content">
             <h1>Welcome to QuizBolt</h1>
             <p>AI-Powered Learning Platform for Smart Students</p>
-            <p>Transform your study materials into interactive flashcards, comprehensive notes, engaging quizzes, and get instant AI assistance.</p>
+            <p>Transform your study materials into interactive flashcards, comprehensive notes, engaging quizzes, and
+                get instant AI assistance.</p>
             <div class="cta-buttons">
                 <a href="#features" class="btn-primary">Explore Features</a>
-                <a href="https://github.com/Sanawar710/Sanawar710.github.io" class="btn-secondary" target="_blank">View on GitHub</a>
+                <a href="https://github.com/Sanawar710/Sanawar710.github.io" class="btn-secondary" target="_blank">View
+                    on GitHub</a>
             </div>
         </div>
     </section>
@@ -320,42 +365,48 @@
             <div class="feature-card">
                 <div class="feature-icon">🎴</div>
                 <h3>Flashcard Generation</h3>
-                <p>Automatically generate interactive flashcards from your study materials using AI. Perfect for quick review and memorization.</p>
+                <p>Automatically generate interactive flashcards from your study materials using AI. Perfect for quick
+                    review and memorization.</p>
                 <div class="contributor">Developed by: Fatima Liaquat (2023202)</div>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">📝</div>
                 <h3>Smart Study Notes</h3>
-                <p>Generate comprehensive, well-organized study notes from your documents. AI helps structure and summarize key concepts.</p>
+                <p>Generate comprehensive, well-organized study notes from your documents. AI helps structure and
+                    summarize key concepts.</p>
                 <div class="contributor">Developed by: Muhammad Sanawar (2023331)</div>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">💬</div>
                 <h3>AI Chat Assistant</h3>
-                <p>Chat with AI about your study materials. Ask questions, get explanations, and explore concepts interactively.</p>
+                <p>Chat with AI about your study materials. Ask questions, get explanations, and explore concepts
+                    interactively.</p>
                 <div class="contributor">Developed by: Rayyan Mehmood (2023602)</div>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">❓</div>
                 <h3>Quiz Generation</h3>
-                <p>Create custom quizzes from your notes to test your knowledge. Multiple choice questions generated intelligently by AI.</p>
+                <p>Create custom quizzes from your notes to test your knowledge. Multiple choice questions generated
+                    intelligently by AI.</p>
                 <div class="contributor">Developed by: Marium Imran (2023303)</div>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">📚</div>
                 <h3>Course Browser</h3>
-                <p>Browse and organize different courses and subjects. Keep all your study materials in one centralized location.</p>
+                <p>Browse and organize different courses and subjects. Keep all your study materials in one centralized
+                    location.</p>
                 <div class="contributor">Collaborative Feature</div>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">📄</div>
                 <h3>Document Upload</h3>
-                <p>Upload PDFs, documents, and other study materials. AI extracts and processes content for all features.</p>
+                <p>Upload PDFs, documents, and other study materials. AI extracts and processes content for all
+                    features.</p>
                 <div class="contributor">Core Functionality</div>
             </div>
         </div>
@@ -396,10 +447,54 @@
         <div style="max-width: 900px; margin: 0 auto;">
             <div class="video-container">
                 <video controls poster="thumbnail.jpg">
-                    <source src="demo.mp4" type="video/mp4">
-                    <!-- <source src="demo.webm" type="video/webm"> -->
+                    <source src="demo-video.mp4" type="video/mp4">
+                    <source src="demo-video.webm" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section class="team" id="technologies">
+        <div class="team-content">
+            <h2 class="section-title">Tools & Technologies</h2>
+            <p
+                style="text-align: center; color: #64748b; font-size: 1.125rem; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                QuizBolt is built with modern, cutting-edge technologies to deliver a fast, reliable, and intelligent
+                learning experience.
+            </p>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon">⚛️</div>
+                    <h3>React</h3>
+                    <p>Built with React and TypeScript for type-safe, component-based architecture ensuring maintainable
+                        and scalable code.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">🎨</div>
+                    <h3>Tailwind CSS</h3>
+                    <p>Styled with Tailwind CSS utility classes for rapid UI development and consistent, responsive
+                        design across all devices.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">🗄️</div>
+                    <h3>Supabase</h3>
+                    <p>Powered by Supabase for real-time database, authentication, and storage solutions with PostgreSQL
+                        backend.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">🤖</div>
+                    <h3>OpenAI GPT-4 Mini</h3>
+                    <p>Integrated with OpenAI's GPT-4 Mini API for intelligent content generation, chat assistance, and
+                        AI-powered features.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">🔗</div>
+                    <h3>RAG Pipeline</h3>
+                    <p>Implements Retrieval-Augmented Generation for enhanced AI responses by retrieving relevant
+                        context from your documents before generating answers.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -409,13 +504,16 @@
         <h2 class="section-title">About QuizBolt</h2>
         <div style="max-width: 800px; margin: 0 auto; text-align: center;">
             <p style="font-size: 1.125rem; color: #64748b; margin-bottom: 1rem;">
-                QuizBolt is an innovative AI-powered learning platform designed to revolutionize the way students study and learn. 
-                By leveraging cutting-edge artificial intelligence, we transform traditional study materials into interactive, 
+                QuizBolt is an innovative AI-powered learning platform designed to revolutionize the way students study
+                and learn.
+                By leveraging cutting-edge artificial intelligence, we transform traditional study materials into
+                interactive,
                 engaging learning experiences.
             </p>
             <p style="font-size: 1.125rem; color: #64748b;">
-                Our platform combines multiple AI-driven features to create a comprehensive study ecosystem that adapts to 
-                each student's learning style and needs. Whether you're preparing for exams, reviewing course materials, 
+                Our platform combines multiple AI-driven features to create a comprehensive study ecosystem that adapts
+                to
+                each student's learning style and needs. Whether you're preparing for exams, reviewing course materials,
                 or exploring new concepts, QuizBolt is your intelligent study companion.
             </p>
         </div>
@@ -425,7 +523,8 @@
     <footer>
         <p>&copy; 2024 QuizBolt. All rights reserved.</p>
         <p>Built with ❤️ by the QuizBolt Team</p>
-        <p><a href="https://github.com/mariumgk/QuizBolt" target="_blank">GitHub Repository</a></p>
+        <p><a href="https://github.com/Sanawar710/Sanawar710.github.io" target="_blank">GitHub Repository</a></p>
     </footer>
 </body>
+
 </html>
