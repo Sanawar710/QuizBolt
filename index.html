@@ -241,6 +241,20 @@
             font-size: 0.875rem;
         }
 
+        /* Video Section */
+        .video-container {
+            background: white;
+            padding: 1rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .video-container video {
+            width: 100%;
+            border-radius: 0.5rem;
+            max-height: 500px;
+        }
+
         /* Footer */
         footer {
             background: #1e293b;
@@ -294,7 +308,7 @@
             <p>Transform your study materials into interactive flashcards, comprehensive notes, engaging quizzes, and get instant AI assistance.</p>
             <div class="cta-buttons">
                 <a href="#features" class="btn-primary">Explore Features</a>
-                <a href="https://github.com/mariumgk/QuizBolt" class="btn-secondary" target="_blank">View on GitHub</a>
+                <a href="https://github.com/Sanawar710/Sanawar710.github.io" class="btn-secondary" target="_blank">View on GitHub</a>
             </div>
         </div>
     </section>
@@ -376,6 +390,20 @@
         </div>
     </section>
 
+    <!-- Demo Video Section -->
+    <section class="features" id="demo">
+        <h2 class="section-title">See QuizBolt in Action</h2>
+        <div style="max-width: 900px; margin: 0 auto;">
+            <div class="video-container">
+                <video controls poster="thumbnail.jpg">
+                    <source src="demo.mp4" type="video/mp4">
+                    <!-- <source src="demo.webm" type="video/webm"> -->
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section class="features" id="about">
         <h2 class="section-title">About QuizBolt</h2>
@@ -397,7 +425,7 @@
     <footer>
         <p>&copy; 2024 QuizBolt. All rights reserved.</p>
         <p>Built with ❤️ by the QuizBolt Team</p>
-        <p><a href="https://github.com/Sanawar710/Sanawar710.github.io" target="_blank">GitHub Repository</a></p>
+        <p><a href="https://github.com/mariumgk/QuizBolt" target="_blank">GitHub Repository</a></p>
     </footer>
 </body>
 </html>
